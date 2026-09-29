@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "document_id": 1,
+    "approver": "Петров П.П.",
+    "approver_level": 3,
+    "approved": true,
+    "approved_at": "2026-09-29"
+  }
+]
