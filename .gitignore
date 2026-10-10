@@ -1,25 +1,13 @@
-# Виртуальное окружение
+.venv/
 venv/
 env/
-.venv/
-
-# Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.egg-info/
-dist/
-build/
-
-# IDE
+.pytest_cache/
+.coverage
 .idea/
 .vscode/
-*.swp
-*.swo
-
-# OS
 .DS_Store
 Thumbs.db
-
-# Tests
-.pytest_cache/
+# Локальная служебная база Django
+db.sqlite3

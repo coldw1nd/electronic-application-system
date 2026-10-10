@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Черновик",
+    "is_final": false
+  },
+  {
+    "id": 2,
+    "name": "На рассмотрении",
+    "is_final": false
+  },
+  {
+    "id": 3,
+    "name": "Одобрено",
+    "is_final": true
+  },
+  {
+    "id": 4,
+    "name": "Отклонено",
+    "is_final": true
+  }
+]

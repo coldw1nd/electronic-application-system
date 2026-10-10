@@ -1,10 +1,8 @@
-"""Вспомогательные функции ввода."""
-
-from datetime import date
+"""Вспомогательные функции для консольного интерфейса."""
 
 
 def input_int(prompt: str) -> int:
-    """Запросить целое число."""
+    """Запрашивать целое число до корректного ввода."""
     while True:
         try:
             return int(input(prompt))
@@ -12,19 +10,10 @@ def input_int(prompt: str) -> int:
             print("Введите целое число.")
 
 
-def input_date(prompt: str) -> date:
-    """Запросить дату в формате ГГГГ-ММ-ДД."""
-    while True:
-        try:
-            return date.fromisoformat(input(prompt))
-        except ValueError:
-            print("Введите дату в формате ГГГГ-ММ-ДД.")
-
-
 def input_text(prompt: str) -> str:
-    """Запросить непустую строку."""
+    """Запрашивать непустой текст."""
     while True:
         value = input(prompt).strip()
         if value:
             return value
-        print("Введите непустой текст.")
+        print("Поле не должно быть пустым.")
