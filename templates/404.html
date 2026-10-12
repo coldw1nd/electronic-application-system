@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Страница не найдена{% endblock %}
+{% block content %}
+<section class="empty-state">
+  <p class="eyebrow">Ошибка 404</p>
+  <h1>Страница не найдена</h1>
+  <p>Запрошенный ресурс отсутствует или был удалён.</p>
+  <a class="button" href="{% url 'homepage:index' %}">Вернуться на главную</a>
+</section>
+{% endblock %}

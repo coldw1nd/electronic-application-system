@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ user.full_name }} · Пользователи{% endblock %}
+{% block content %}
+<p class="breadcrumb"><a href="{% url 'users:index' %}">Пользователи</a> / Карточка</p>
+<section class="detail-header"><p class="eyebrow">Профиль пользователя</p><h1>{{ user.full_name }}</h1><p>{{ user.email|default:"Электронная почта не указана" }}</p></section>
+<section class="section-heading"><h2>Заявления пользователя</h2><span class="count-pill">{{ applications|length }}</span></section>
+{% for application in applications %}
+  {% include "includes/application_card.html" with application=application %}
+{% empty %}<p class="empty-message">У пользователя пока нет заявлений.</p>{% endfor %}
+{% endblock %}

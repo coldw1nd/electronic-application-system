@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Заявления · Электронные заявления{% endblock %}
+{% block content %}
+<section class="page-heading"><p class="eyebrow">Реестр обращений</p><h1>Электронные заявления</h1><p>Просмотр заявлений и текущего этапа их обработки.</p></section>
+{% for application in applications %}
+  {% include "includes/application_card.html" with application=application %}
+{% empty %}
+  <section class="empty-state"><h2>Заявлений пока нет</h2><p>В реестре отсутствуют записи.</p></section>
+{% endfor %}
+{% endblock %}

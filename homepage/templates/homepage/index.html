@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Главная · Электронные заявления{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero__text">
+    <p class="eyebrow">Единое пространство обращений</p>
+    <h1>Сервис электронных заявлений</h1>
+    <p>Просматривайте заявления, прикреплённые документы, текущие статусы и комментарии в одном месте.</p>
+    <a class="button" href="{% url 'applications:index' %}">Перейти к заявлениям</a>
+  </div>
+  <div class="hero__art" aria-hidden="true">
+    <img src="{% static 'homepage/img/portal.svg' %}" alt="">
+  </div>
+</section>
+<section class="stats-grid" aria-label="Статистика">
+  <article class="stat-card">
+    <span>Заявления</span>
+    <strong>{{ applications_count }}</strong>
+  </article>
+  <article class="stat-card">
+    <span>Пользователи</span>
+    <strong>{{ users_count }}</strong>
+  </article>
+  <article class="stat-card">
+    <span>Статусы</span>
+    <strong>{{ statuses_count }}</strong>
+  </article>
+</section>
+<section class="section-heading">
+  <div>
+    <p class="eyebrow">Недавние обращения</p>
+    <h2>Заявления</h2>
+  </div>
+  <a class="text-link" href="{% url 'applications:index' %}">
+    Все заявления →
+  </a>
+</section>
+{% for application in applications %}
+  {% include "includes/application_card.html" with application=application %}
+{% empty %}
+  <p class="empty-message">Заявлений пока нет.</p>
+{% endfor %}
+{% endblock %}

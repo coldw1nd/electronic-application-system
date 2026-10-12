@@ -9,5 +9,3 @@ __pycache__/
 .vscode/
 .DS_Store
 Thumbs.db
-# Локальная служебная база Django
-db.sqlite3
